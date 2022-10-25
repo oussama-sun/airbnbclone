@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { format } from "date-fns";
 import ListCard from "../components/ListCard";
 import MapVP from "../components/MapVP";
-const search = ({ searchResults }) => {
+const Search = ({ searchResults }) => {
   const router = useRouter();
   const { location, startDate, endDate, numberOfGuests } = router.query;
   const formattedStartDate =
@@ -29,8 +29,8 @@ const search = ({ searchResults }) => {
             <p className="button">More fillters</p>
           </div>
           <div className="flex flex-col min-w-fit">
-            {searchResults.map((data) => (
-              <ListCard {...data} />
+            {searchResults.map((data, index) => (
+              <ListCard {...data} key={index} />
             ))}
           </div>
         </section>
@@ -41,7 +41,7 @@ const search = ({ searchResults }) => {
     </div>
   );
 };
-export default search;
+export default Search;
 export async function getStaticProps() {
   const searchResults = await fetch("https://www.jsonkeeper.com/b/5NPS").then(
     (res) => res.json()

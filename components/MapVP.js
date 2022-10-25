@@ -16,7 +16,6 @@ const MapVP = ({ searchResults }) => {
     zoom: 11,
   });
   const offset = mapboxgl.Point(-20, -10);
-  console.log(selectedLocation);
   return (
     <>
       <Map

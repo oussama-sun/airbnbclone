@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Banner from "../components/Banner";
 import { Header } from "../components/Header";
 import LargeCard from "../components/LargeCard";
@@ -15,8 +14,8 @@ export default function Home({ exploreData, cardsData }) {
           <h2 className="text-2xl font-semibold pb-5">Explore Neaeby</h2>
           {/* Pull some data from server - API endpoints*/}
           <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {exploreData?.map((data) => (
-              <SmallCard {...data} />
+            {exploreData?.map((data, index) => (
+              <SmallCard {...data} key={index} />
             ))}
           </div>
         </section>
