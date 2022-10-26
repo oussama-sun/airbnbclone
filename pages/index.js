@@ -22,7 +22,7 @@ export default function Home() {
       >
         <Marker longitude={-122.4} latitude={37.8} color="red" />
       </Map>
-      <h1>Git Test</h1>
+      <h1>Git_Test</h1>
     </>
   );
 }
